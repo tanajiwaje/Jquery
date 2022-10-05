@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box
+        {
+            border: 2px solid orange;
+        }
+
+        .first{background: tan;}
+        .second{
+            background: pink;
+        }
+        .boxbg{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jquery class methods</h1>
+
+    <div id="box">
+        <h3>Test box</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo doloremque mollitia, beatae repellat, iste, cum voluptate sint eligendi excepturi nulla commodi exercitationem alias? Quibusdam deleniti totam rerum. Accusamus, autem temporibus?</p>
+    </div>
+    <br>
+
+    <button id="button">addbutton</button>
+    <button id="removebutton">removebutton</button>
+    <button id="togglebutton">togglebutton</button>
+    
+
+
+    <script src="js/jq.js"></script>
+     <script>
+    /*    $(document).ready(function(){
+            $('#box').on("mouseover mouseout",function(){
+                $(this).toggleClass("boxbg");
+            })
+        })
+     */  
+
+     $(document).ready(function(){
+            $('#box').on({
+                "click":function(){
+                    $(this).css("background","orange");
+
+                },
+                "mouseover":function(){
+                    $(this).css("background","pink");
+
+                },
+                "mouseout":function(){
+                    $(this).css("background","lightblue");
+                }
+            })
+        });
+
+        $("button").click(function(){
+            $('#box').off("mouseover mouseout")
+        })
+
+     </script>
+</body>
+</html>

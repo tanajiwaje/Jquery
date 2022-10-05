@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            border: 2px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <h1> learn append and prepand method</h1>
+    <div id="box">
+        <h3>Test box</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quam asperiores, quos, expedita eligendi accusamus, porro minima perferendis temporibus nulla nobis. Nisi natus eius aperiam aliquam eos quasi sunt quos.</p>
+    </div><br><br>
+    <button id="append">append</button>
+    <button id="prepand">prepand</button>
+    
+    <script src="js/jq.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#append').click(function(){
+                $('#box').append("<h2> yahoo baba <h2>");
+            })
+
+            $('#prepand').click(function(){
+                $('#box').prepend("<h3> this is prepand heading <h3>");
+            })
+
+        })
+    </script>
+</body>
+</html>

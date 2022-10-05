@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        
+        #box{
+            background: pink;
+            padding: 10px;
+            border: 1px solid #000;
+            margin: auto;
+            overflow-y: scroll;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px cyan;
+            float: left;   
+        }
+    </style>
+ 
+</head>
+<body>
+    <h1> yahoo baba :jquery syntax</h1>
+
+    <div id="box" class="text">
+        <h2>Test box </h2>
+        <p id="t">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, culpa exercitationem voluptate temporibus atque assumenda illo aut, nesciunt iure nihil sed, minus tenetur provident fugiat vel optio sint inventore! Earum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit dolor accusantium voluptatibus molestias eligendi, impedit maxime eos natus consequuntur aut aperiam dolorem voluptates dicta culpa fuga nobis, beatae dolorum qui. Corporis libero et minima consequatur tempore alias dolore at sint aspernatur, placeat autem aliquam optio, adipisci delectus voluptatum excepturi eligendi minus fugit omnis cupiditate officia velit expedita, commodi ipsam! Enim beatae, officia repudiandae reprehenderit explicabo accusantium tempora suscipit, autem aliquam harum doloribus ab consequatur, iure tenetur impedit earum perferendis incidunt rem? Exercitationem facilis sunt quas minima alias cumque magnam, esse sed consequatur quae quia sapiente, itaque ab veritatis maxime similique?</p>
+
+    </div>
+
+    <script src="js/jq.js"></script>
+    <script>
+      $(document).ready(function(){
+            $("#box").click(()=>{
+                $("#box").css('background-color','yellow');
+            });
+        })  
+
+        $("#box").dblclick(()=>{
+                $("#box").css('background-color','green');
+        });
+
+        $("#box").mouseleave(function(){
+            $("#box").css('background-color','red');
+        })
+
+        $("#box").mouseenter(function()
+        {
+            $("#box").css("background-color",'grey')
+        })
+
+        $('#box').contextmenu(function()
+        {
+            $("#box").css("background-color","#008080");
+        })
+     
+  
+      $(document).ready(function(){
+        $("#t").click(function(){
+            $("#t").css("color","red");
+        })
+      })
+
+     
+     
+
+     $('body').keydown(function(){
+            $(this).css('background-color','green');
+     });
+
+     $('body').keyup(function(){
+            $(this).css('background-color','blue');
+     });
+    </script>
+
+
+
+
+   
+
+
+</body>
+</html>

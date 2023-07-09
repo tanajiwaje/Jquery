@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Bootstrap Files/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("#div").hide();
+            })
+
+            $("#btn2").click(function()
+            {
+                $("#div").show();
+            })
+
+            $("#btn3").click(function(){
+                $("#div").toggle();
+            })
+
+            $("#f1").click(function(){
+                $("#div").fadeOut();
+            })
+
+            $("#f2").click(function(){
+                $("#div").fadeIn();
+            })
+
+            $("#f3").click(function(){
+                $("#div").fadeToggle();
+            })
+
+            $("#s1").click(function(){
+                $("#div").slideUp();
+            })
+
+            $("#s2").click(function(){
+                $("#div").slideDown();
+            })
+
+            $("#s3").click(function(){
+                $("#div").slideToggle();
+            })
+
+            $("#a").click(function(){
+                $("#div").animate({"left":"900px","font-size":"30px","height":"70px","width":"100"},2000);
+                $("#div").animate({"bottom":"50px","font-size":"35px","height":"80px","width":"120"},1500);
+                $("#div").animate({"left":"5px","font-size":"45px","height":"90px","width":"150"},2000);
+                $("#div").animate({"bottom":"350px","font-size":"20px","height":"50px","width":"70"},1500);
+                
+
+            })
+        
+
+            
+
+            
+
+        })
+    </script>
+
+    
+</head>
+<body>
+    <input type="button" value="hide" id="btn">
+    <input type="button" value="Show" id="btn2">
+    <input type="button" value="Toggle" id="btn3">
+    <br>
+    <input type="button" value="fadeout" id="f1">
+    <input type="button" value="fadein" id="f2">
+    <input type="button" value="fadetoggle" id="f3">
+    <br>
+    <input type="button" value="sideup" id="s1">
+    <input type="button" value="sidedown" id="s2">
+    <input type="button" value="sidetoggle" id="s3">
+    <br>
+    <input type="button" value="left to right" id="a"> 
+    
+   <br> <br>
+    <div style="height: 50px;width: 70px;background-color: red; position: absolute; text-align: center; padding-top: 30px;" id="div">jquery</div> 
+</body>
+</html>

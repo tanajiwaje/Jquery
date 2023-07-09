@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Bootstrap Files/js/jquery.min.js"></script>
+    <script>
+        var student=[]
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                var roll=$("#roll").val();
+                var name=$("#name").val();
+                var address=$("#add").val();
+                var mobile=$("#mobile").val();
+                var standard=$("#standard").val();
+
+                var st={"roll":roll,"name":name,"address":address,"mobile":mobile,"standard":standard}
+                student.push(st);
+                DisplayData();
+
+            })
+        })
+
+        function DisplayData()
+        {
+            $.each(student,function(i,d){
+                $("#tbldata").append("<tr>"+"<td>"+d.roll+"</td>"+
+                    "<td>"+d.name+"</td>"+
+                    "<td>"+d.address+"</td>"+
+                    +"<td>"+d.mobile+"</td>"+
+                    "<td>"+d.standard+"</td>"+
+                    "<td><input type='button' value='X' onclick=Delete("+i+")>"+
+                    "<td><input type='button' value='edit' onclick=edit("+i+")></tr>"
+                    )
+            })
+        }
+
+        function Delete(p)
+        {
+             student(p,1);
+             DisplayData();
+        }
+    </script>
+</head>
+<body>
+    <table>
+
+        
+
+        <tr>
+            <td>Roll No</td>
+            <td><input type="text" id="roll"></td>
+        </tr>
+
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+
+        <tr>
+            <td>Address</td>
+            <td><input type="text" id="add"></td>
+        </tr>
+
+        <tr>
+            <td>Mobile</td>
+            <td><input type="text" id="mobile"></td>
+        </tr>
+
+        <tr>
+            <td>Standard</td>
+            <td><input type="text" id="standard"></td>
+        </tr>
+
+        <tr>
+            <th><input type="button" value="submit" id="btn1"></th>
+            <th><input type="button" value="update" id="btn2"></th>
+        </tr>
+    </table>
+
+
+    <table>
+        <thead>
+            <th>Index:</th>
+            <th>Roll no:</th>
+            <th>Name:</th>
+            <th>Address:</th>
+            <th>Standard:</th>
+        </thead>
+
+        <tbody data="tbldata">
+
+        </tbody>
+    </table>
+</body>
+</html>

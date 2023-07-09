@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Bootstrap Files/js/jquery.min.js"></script>
+    <script>
+       var cities=[];
+       $(document).ready(function(){
+        $("#btn").click(function(){
+            var c=$("#txt").val();
+            if(cities.indexOf(c.toLowerCase())==-1)
+            {
+               cities.push(c.toLowerCase());
+               Display();
+               Cleardata();
+            }
+            else{
+                alert("data already exist");
+            }
+        })
+       })
+
+       function Cleardata()
+       {
+          $("#txt").val("");
+       }
+
+       function Display()
+       {
+         $("#mydata").empty();
+         $.each(cities,function(i,d){
+            $("#mydata").append("<li>"+d+"<input type='button' value='X' onclick=Clear("+i+")></li>");
+         })
+       }
+
+       function Clear(p)
+       {
+           cities.splice(p,1);
+           Display();
+       }
+    </script>
+</head>
+<body>
+    City <input type="text" id="txt">
+      <input type="button" value="submit" id="btn">
+    
+      <ul id="mydata">
+
+    </ul>
+    
+</body>
+</html>

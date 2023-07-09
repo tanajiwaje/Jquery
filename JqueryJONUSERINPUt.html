@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Bootstrap Files/js/jquery.min.js"></script>
+
+    <script>
+        var student=[];
+        var index=-1;
+
+     $(document).ready(function(){
+        $("#btn").click(function(){
+            var r=$("#roll").val();
+            var n=$("#name").val();
+            var m=$("#mobile").val();
+            var a=$("#add").val();
+            var st={"roll":r,"name":n,"mobile":m,"address":a}
+            student.push(st);
+            DisplayData();
+            clearData();
+        })
+     })
+
+     function clearData()
+     {
+        $("#roll").val("");
+            $("#name").val("");
+            $("#mobile").val("");
+            $("#add").val("");
+     }
+
+
+     function DisplayData()
+     {
+        $("#tbldata").empty();
+        $.each(student,function(i,d){
+            
+            $("#tbldata").append("<tr><td>"+d.roll+"</td><td>"+d.name+"</td><td>"+d.mobile+"</td><td>"+d.address+"</td><td>"+"<input type='button' value='X' onclick=remove("+i+")>"+"</td><td>"+"<input type='button' value='edit' onclick=edit("+i+")>"+"</td></tr>");
+        })
+     }
+
+     function remove(p)
+     {
+             student.splice(p,1);
+             DisplayData();
+     }
+
+     function edit(p)
+     {
+        index=p;
+        var s=student[p];
+            $("#roll").val(s.roll);
+            $("#name").val(s.name);
+            $("#mobile").val(s.mobile);
+            $("#add").val(s.address);
+     }
+
+     $(document).ready(function(){
+        $("#btn1").click(function(){
+            var r=$("#roll").val();
+            var n=$("#name").val();
+            var m=$("#mobile").val();
+            var a=$("#add").val();
+            var t={"roll":r,"name":n,"mobile":m,"address":a}
+            student[index]=t;
+            DisplayData();
+            clearData();
+        })
+
+
+     })
+
+    </script>
+</head>
+<body>
+ 
+     <table>
+        <tr>
+            <th>Roll</th>
+            <th><input type="text" id="roll"></th>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <th><input type="text" id="name"></th>
+        </tr>
+
+        <tr>
+            <th>Mobile</th>
+            <th><input type="text" id="mobile"></th>
+        </tr>
+
+
+        <tr>
+            <th>Address</th>
+            <th><input type="text" id="add"></th>
+        </tr>
+     </table>
+
+    <input type="button" name="" value="submit" id="btn">
+    <input type="button" name="" value="update" id="btn1">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Roll</th>
+                <th>Name</th>
+                <th>mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbldata"></tbody>
+    </table>
+</body>
+</html>

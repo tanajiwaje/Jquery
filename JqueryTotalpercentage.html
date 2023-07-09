@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Bootstrap Files/js/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#calculation").click(function(){
+                var english=Number($("#en").val());
+                var math=Number($("#math").val());
+                var science=Number($("#sci").val());
+         
+                var total=english+math+science;
+                var per=total/3; 
+                
+                $("#total").html("Total :"+total);
+                $("#per").html("Percentage :"+per);
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+    English : <input type="text" name="" id="en">
+    Math : <input type="text" name="" id="math">
+    Science : <input type="text" id="sci">
+    <input type="button" value="submit" id="calculation">
+
+    <h2 id="total"></h2>
+    <h2 id="per"></h2>
+
+</body>
+</html>

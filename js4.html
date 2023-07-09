@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <script>
+        function fun(){
+            var a=Number(document.getElementById("num1").value);
+            var b=Number(document.getElementById("num2").value);
+
+            var c=a+b;
+            var s=a-b;
+            var m=a*b;
+            var d=a/b;
+            
+            document.getElementById("msg").innerHTML="addition is ="+c;
+            document.getElementById("msg1").innerHTML="substration is ="+s;
+            document.getElementById("msg2").innerHTML="multiplication is ="+m;
+            document.getElementById("msg3").innerHTML="division is ="+d;
+        }
+        
+
+    </script>
+    <style>
+        input{
+            color: grey;
+            background-color: whitesmoke;
+            border-radius: 5px;
+            box-shadow: 2px 2px ;
+        }
+        #button
+        {
+            background-color: rosybrown;
+            width: 170px;
+            height: 25px;
+            margin-left: 85px;
+        }
+    </style>
+
+</head>
+<body>
+    Enter Num1 <input type="text" id="num1"><br><br>
+    
+    Enter Num2 <input type="text" id="num2">
+    <br><br>
+    <input id="button" type="button" value="Answer" onclick="fun()">
+
+    <hr>
+
+
+    <h2 id="msg"></h2>
+    <h2 id="msg1"></h2>
+    <h2 id="msg2"></h2>
+    <h2 id="msg3"></h2>
+    
+</body>
+</html>
